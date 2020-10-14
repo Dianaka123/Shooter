@@ -121,12 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &231394475 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2833350505254278674, guid: 1f6935081bf744b869479ad228495e64,
-    type: 3}
-  m_PrefabInstance: {fileID: 988900098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &236230774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,31 +275,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1671687619}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &633680695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6227948693564084701, guid: 1f6935081bf744b869479ad228495e64,
-    type: 3}
-  m_PrefabInstance: {fileID: 988900098}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &633680697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633680695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c57e8879f25ac46999d76a1e14484d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CameraTransform: {fileID: 231394475}
-  yMaxLimit: 110
-  yMinLimit: 75
-  xMaxLimit: 20
-  xMinLimit: -25
-  xMoveThreshold: 1000
-  yMoveThreshold: 1000
 --- !u!4 &677450996 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8197237289309994252, guid: 081b4d867436b468db9d2cb897b868db,
@@ -411,6 +380,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1463003314}
     m_Modifications:
+    - target: {fileID: 2463815248111628583, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720259458485675254, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: playersIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -471,6 +450,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6227948692200599278, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227948692575364084, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -480,6 +469,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: m_Depth
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6227948693564084700, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
@@ -554,6 +548,11 @@ PrefabInstance:
     - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: m_Depth
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -639,6 +638,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2077714004}
     m_Modifications:
+    - target: {fileID: 2833350505254278674, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833350505254278674, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720259458485675254, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: playersIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -727,7 +741,7 @@ PrefabInstance:
     - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_Depth
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
@@ -744,6 +758,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6227948693564084701, guid: 1f6935081bf744b869479ad228495e64,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -757,7 +776,7 @@ PrefabInstance:
     - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_Depth
-      value: 2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
@@ -925,7 +944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2077714004
 Transform:
   m_ObjectHideFlags: 0

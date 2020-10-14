@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  playersIndex: 0
 --- !u!1 &6227948692575364084
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +290,7 @@ GameObject:
   - component: {fileID: 6227948693564084697}
   - component: {fileID: 6227948693564084702}
   - component: {fileID: 6227948693564084703}
+  - component: {fileID: 7087697237792082844}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -371,3 +373,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7087697237792082844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227948693564084701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57e8879f25ac46999d76a1e14484d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraTransform: {fileID: 2833350505254278674}
+  yMaxLimit: 110
+  yMinLimit: 75
+  xMaxLimit: 20
+  xMinLimit: -25
+  xMoveThreshold: 1000
+  yMoveThreshold: 1000
