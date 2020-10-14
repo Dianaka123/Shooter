@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &231394475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2833350505254278674, guid: 1f6935081bf744b869479ad228495e64,
+    type: 3}
+  m_PrefabInstance: {fileID: 988900098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &236230774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,7 +299,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57e8879f25ac46999d76a1e14484d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 10
+  CameraTransform: {fileID: 231394475}
+  yMaxLimit: 110
+  yMinLimit: 75
+  xMaxLimit: 20
+  xMinLimit: -25
+  xMoveThreshold: 1000
+  yMoveThreshold: 1000
 --- !u!4 &677450996 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8197237289309994252, guid: 081b4d867436b468db9d2cb897b868db,
@@ -417,22 +429,22 @@ PrefabInstance:
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.009992348
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999501
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
@@ -442,7 +454,7 @@ PrefabInstance:
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 1.1450001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
@@ -461,28 +473,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
-      propertyPath: m_Depth
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
-        type: 3}
       propertyPath: m_NormalizedViewPortRect.width
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
-        type: 3}
-      propertyPath: far clip plane
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
@@ -556,28 +548,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 768
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
-        type: 3}
       propertyPath: m_NormalizedViewPortRect.width
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
-      propertyPath: far clip plane
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
-        type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121830116758941077, guid: 1f6935081bf744b869479ad228495e64,
-        type: 3}
-      propertyPath: m_Depth
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f6935081bf744b869479ad228495e64, type: 3}
@@ -750,7 +727,7 @@ PrefabInstance:
     - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
       propertyPath: m_Depth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6227948692575364086, guid: 1f6935081bf744b869479ad228495e64,
         type: 3}
@@ -795,31 +772,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1289148716}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1380647656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6227948692200599278, guid: 1f6935081bf744b869479ad228495e64,
-    type: 3}
-  m_PrefabInstance: {fileID: 988900098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1380647657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6227948692200599274, guid: 1f6935081bf744b869479ad228495e64,
     type: 3}
   m_PrefabInstance: {fileID: 988900098}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1380647658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380647656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59fde48377ba84ba4b1ef608a3f70f47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!1 &1463003313
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2077714004
 Transform:
   m_ObjectHideFlags: 0
