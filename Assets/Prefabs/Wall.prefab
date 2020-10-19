@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5993566259191678084}
   - component: {fileID: 5993566259191678091}
   - component: {fileID: 5993566259191678090}
-  - component: {fileID: 1837656457657839947}
+  - component: {fileID: 9162271688104196164}
   m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1837656457657839947
+--- !u!114 &9162271688104196164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,3 +107,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
+  startColor: {r: 0.8867924, g: 0.81168765, b: 0.12130654, a: 1}
