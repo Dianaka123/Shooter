@@ -14,6 +14,7 @@ public class JsonFile
     public string fullName;
     public string base64Texture;
 }
+
 public class DownloadFiles : Editor
 {
     [MenuItem("Tools/WebRequest")]
@@ -55,16 +56,18 @@ public class DownloadFiles : Editor
                 
                 var planeMaterial = GameObject.FindWithTag("Plane")?.GetComponent<MeshRenderer>()?.sharedMaterial;
                 Debug.Log(planeMaterial);
-                planeMaterial.SetTexture("_MainTex", texture2D);
+                planeMaterial?.SetTexture("_MainTex", texture2D);
             }
         };
     }
 
     private static JsonFile GetJsonFile(string zipFilePath)
     {
-        var newFolder = "Settings";
+        const string newFolder = "Settings";
         var settingsPath = Path.Combine(Application.persistentDataPath, newFolder);
+        
         string[] files;
+        
         if (Directory.Exists(settingsPath))
         {
             files = Directory.GetFiles(settingsPath);
@@ -74,20 +77,44 @@ public class DownloadFiles : Editor
             }
             Directory.Delete(settingsPath);
         }
-                
+            
         ZipFile.ExtractToDirectory(zipFilePath, settingsPath);
-                
-        files = Directory.GetFiles(settingsPath);
-        JsonFile result = null;
-        if (files.Length != 0 )
+            
+        files = Directory.GetFiles(settingsPath, "*.json");
+
+        if (files.Length == 0) 
+            return null;
+
+        string TryGetText(string fileName)
         {
-            var fileName = files[0];
-            var data = File.ReadAllText(fileName);
-                    
-            result = JsonUtility.FromJson<JsonFile>(data);
+            try
+            {
+                return File.ReadAllText(fileName);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.StackTrace);
+                throw;
+            }
         }
 
-        return result;
+        try
+        {
+            var fileName = files[0];
+            var data = TryGetText(fileName);
+            var result = JsonUtility.FromJson<JsonFile>(data);
+            return result;
+        }
+        catch (IOException ioException)
+        {
+            Debug.Log(ioException.StackTrace);
+            return null;
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.StackTrace);
+            return null;
+        }
     }
 
     private static Texture2D GetTextureFromByte64(string base64)
